@@ -2,12 +2,12 @@
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: local(fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: url(../fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
   src: local('Material Icons'),
        local('MaterialIcons-Regular'),
-       local(fonts/MaterialIcons-Regular.woff2) format('woff2'),
-       local(fonts/MaterialIcons-Regular.woff) format('woff'),
-       local(fonts/MaterialIcons-Regular.ttf) format('truetype');
+       url(../fonts/MaterialIcons-Regular.woff2) format('woff2'),
+       url(../fonts/MaterialIcons-Regular.woff) format('woff'),
+       url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
 }
 
 .material-icons {
@@ -33,4 +33,29 @@
 
   /* Support for IE. */
   font-feature-settings: 'liga';
+}
+
+.demo-card-wide.mdl-card {
+  width: 90%;
+  margin: auto;
+  margin-top: 1%;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('../img/crepe.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+#cmd-btn{
+  position: absolute;
+  right: 3%;
+  bottom: 3%;
+  z-index: 1;
+}
+
+#p1{
+  width: 100%;
 }

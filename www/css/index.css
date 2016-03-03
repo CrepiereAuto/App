@@ -43,7 +43,7 @@
 .demo-card-wide > .mdl-card__title {
   color: #fff;
   height: 176px;
-  background: url('../assets/demos/welcome_card.jpg') center / cover;
+  background: url('../img/crepe.jpg') center / cover;
 }
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
@@ -51,7 +51,15 @@
 
 #cmd-btn{
   position: absolute;
-  right: 1%;
-  bottom: 1%;
+  right: 3%;
+  bottom: 3%;
   z-index: 1;
+}
+
+#p1{
+  width: 100%;
+}
+
+.view{
+  display: none;
 }
