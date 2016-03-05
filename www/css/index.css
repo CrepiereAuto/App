@@ -40,10 +40,17 @@
   margin: auto;
   margin-top: 1%;
 }
+.demo-card-wide > .mdl-card__background{
+  height: 176px;
+  background: url('../img/crepe.jpg') center / cover;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
 .demo-card-wide > .mdl-card__title {
   color: #fff;
   height: 176px;
-  background: url('../img/crepe.jpg') center / cover;
+ background: rgba(0, 0, 0, 0.2);
 }
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
@@ -62,4 +69,8 @@
 
 .view{
   display: none;
+}
+
+.mdl-layout__drawer-button{
+  outline: 0;
 }

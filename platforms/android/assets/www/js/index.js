@@ -53,13 +53,27 @@
 var view = {
   now: null,
   set: function(viewId){
-    $('#'this.now).hide();
-    $('#'+viewId.toLowerCase()).show();
+    $('#'+this.now).hide();
+    this.now = viewId.toLowerCase();
+    $('#'+this.now).show();
     $('#title').text(viewId);
   }
 }
 
 view.set('Home');
+
 $(".mdl-navigation__link").click(function(){
-  view($(this).text());
+  view.set($(this).text());
+  $(".mdl-layout__obfuscator").add(".mdl-layout__drawer").removeClass("is-visible")
+});
+
+var socket = io('http://localhost');
+socket.on('connect', function(){
+
+});
+socket.on('event', function(data){
+
+});
+socket.on('disconnect', function(){
+  
 });

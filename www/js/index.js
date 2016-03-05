@@ -64,4 +64,16 @@ view.set('Home');
 
 $(".mdl-navigation__link").click(function(){
   view.set($(this).text());
+  $(".mdl-layout__obfuscator").add(".mdl-layout__drawer").removeClass("is-visible")
+});
+
+var socket = io('http://localhost:3000');
+socket.on('connect', function(){
+  console.log('connected');
+});
+socket.on('event', function(data){
+
+});
+socket.on('disconnect', function(){
+
 });
