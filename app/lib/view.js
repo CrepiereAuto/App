@@ -1,13 +1,12 @@
 'use strict';
 
-var $ = require('jquery');
-
 class view {
   constructor(){
     this.now = null;
+    var self = this;
     $(".mdl-navigation__link").click(function(){
-      this.set($(this).text());
-      $(".mdl-layout__obfuscator").add(".mdl-layout__drawer").removeClass("is-visible")
+      self.set($(this).text());
+      $(".mdl-layout__obfuscator").add(".mdl-layout__drawer").removeClass("is-visible");
     });
   }
   set(viewId){
@@ -18,4 +17,4 @@ class view {
   }
 }
 
-module.exports = new view;
+module.exports = new view();
