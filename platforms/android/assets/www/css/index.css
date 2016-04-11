@@ -56,11 +56,24 @@
   color: #fff;
 }
 
-#cmd-btn{
+.progress-title{
+  margin: 0;
+}
+
+.cmd-machines, #cmd-btn{
   position: absolute;
   right: 3%;
   bottom: 3%;
   z-index: 1;
+}
+
+.cmd-machines{
+  display: none;
+}
+
+.cmd-machine{
+  text-align: right;
+  padding-bottom: 5px;
 }
 
 #p1{
@@ -73,4 +86,12 @@
 
 .mdl-layout__drawer-button{
   outline: 0;
+}
+
+.mdl-progress{
+  width: 100%;
+}
+
+.dial-input{
+  width: 30%;
 }

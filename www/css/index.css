@@ -87,3 +87,11 @@
 .mdl-layout__drawer-button{
   outline: 0;
 }
+
+.mdl-progress{
+  width: 100%;
+}
+
+.dial-input{
+  width: 30%;
+}

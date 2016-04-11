@@ -53,13 +53,29 @@
 var view = {
   now: null,
   set: function(viewId){
-    $('#'this.now).hide();
-    $('#'+viewId.toLowerCase()).show();
+    $('#'+this.now).hide();
+    this.now = viewId.toLowerCase();
+    $('#'+this.now).show();
     $('#title').text(viewId);
   }
 }
 
 view.set('Home');
+
 $(".mdl-navigation__link").click(function(){
-  view($(this).text());
+  view.set($(this).text());
+  $(".mdl-layout__obfuscator").add(".mdl-layout__drawer").removeClass("is-visible")
+});
+
+var socket = io('http://localhost:3030');
+socket.on('connect', function(){
+  console.log('connected');
+  socket.emit('p2p-open', 'kfdsd');
+  // setTimeout(socket.emit('p2p-connect', 'kfdsd'), 2000);
+});
+socket.on('event', function(data){
+  console.log(data);
+});
+socket.on('disconnect', function(){
+  console.log('disconnected');
 });

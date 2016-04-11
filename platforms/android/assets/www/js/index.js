@@ -67,13 +67,15 @@ $(".mdl-navigation__link").click(function(){
   $(".mdl-layout__obfuscator").add(".mdl-layout__drawer").removeClass("is-visible")
 });
 
-var socket = io('http://localhost');
+var socket = io('http://localhost:3030');
 socket.on('connect', function(){
-
+  console.log('connected');
+  socket.emit('p2p-open', 'kfdsd');
+  // setTimeout(socket.emit('p2p-connect', 'kfdsd'), 2000);
 });
 socket.on('event', function(data){
-
+  console.log(data);
 });
 socket.on('disconnect', function(){
-  
+  console.log('disconnected');
 });
