@@ -35,10 +35,18 @@
   font-feature-settings: 'liga';
 }
 
+.add-btn, .cmd-machines {
+  position: fixed;;
+  right: 3%;
+  bottom: 3%;
+  z-index: 2;
+}
+
 .demo-card-wide.mdl-card {
   width: 90%;
   margin: auto;
-  margin-top: 1%;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 .demo-card-wide > .mdl-card__background{
   height: 176px;
@@ -58,13 +66,6 @@
 
 .progress-title{
   margin: 0;
-}
-
-.cmd-machines, #cmd-btn{
-  position: absolute;
-  right: 3%;
-  bottom: 3%;
-  z-index: 1;
 }
 
 .cmd-machines{
@@ -94,4 +95,8 @@
 
 .dial-input{
   width: 30%;
+}
+
+.mdl-list__margin {
+  margin-right: 14%;
 }

@@ -18,9 +18,9 @@ View.set('Home');
 
 // Commands manager
 var Command = {
-  items: [],
+  items: [{id: 0, date: "", todo: 5, done: 1}],
   add: function (params) {
-
+    this.items.push(params);
   },
   updates: function (params) {
 
@@ -43,10 +43,22 @@ $("#cmd-dial-close").click(function () {
 });
 
 $("#cmd-dial-add").click(function () {
-  Command.add({
-    date: null,
-    quantity: null
-  });
+  var id = Command.items[Command.items.length-1].id + 1;
+  var todo = $("#form-quantity").val();
+  if (todo) {
+    Command.add({
+      id: id,
+      date: null,
+      todo: todo,
+      done: null
+    });
+    viewCompile('command', {id: "card-"+id, name: 'Machine 1', todo: todo, done: 0}, function (html) {
+      $("#home").append(html);
+      componentHandler.upgradeElement($("#card-"+id+" > .mdl-progress")[0]);
+    });
+} else {
+  console.log('We need at least one');
+}
   $("#cmd-dial")[0].close();
 });
 
@@ -70,33 +82,58 @@ $("#cmd-datetime-validate").click(function () {
   $("#cmd-datetime")[0].close();
 });
 
+// View machines
+
+$("#mchn-btn").click(function () {
+  $("#mchn-dial")[0].showModal();
+});
+
+$("#mchn-cancel").click(function () {
+  $("#mchn-dial")[0].close();
+});
+
+$("#mchn-add").click(function () {
+  socket.emit('join', $("#mchn-code").val());
+  $("#mchn-dial")[0].close();
+});
+
 //Socket manager
-// var socket = io('http://localhost:3030');
+var socket = io('http://localhost:3030');
+var token;
 // var token = 'Fklk7ThAPcSbgaba';
-//
-// socket.on('connect', function(){
-//   console.log('connected');
-//   socket.on('disconnect', function(){
-//     console.log('disconnected');
-//   });
-//
-//   socket.emit('start', token);
-//
-//   socket.on('token', function (data) {
-//     token = data
-//     console.log(token);
-//   })
-//
-//   socket.on('join', function (data) {
-//     console.log(data);
-//   })
-//
-//   setTimeout(function () {
-//     socket.emit('join', '123')
-//   },5000)
-//
-//   setTimeout(function () {
-//     console.log('update');
-//     socket.emit('update', {station: 0, changes: {todo: 25, done: 6}});
-//   },10000);
-// });
+
+socket.on('connect', function(){
+
+  console.log('connected');
+
+  socket.on('disconnect', function(){
+    console.log('disconnected');
+  });
+
+  socket.emit('start', token);
+
+  socket.on('token', function (data) {
+    token = data
+    console.log(token);
+  })
+
+  socket.on('join', function (data) {
+    console.log(data);
+  })
+
+  // setTimeout(function () {
+  //   socket.emit('join', '123')
+  // },5000)
+  //
+  // setTimeout(function () {
+  //   console.log('update');
+  //   socket.emit('update', {station: 0, changes: {todo: 25, done: 6}});
+  // },10000);
+});
+
+// Fonctions
+function viewCompile(name, data, callback) {
+  $.get('templates/'+name+'.html', function (file) {
+    callback(Handlebars.compile(file)(data));
+  });
+}

@@ -18,9 +18,9 @@ View.set('Home');
 
 // Commands manager
 var Command = {
-  items: [],
+  items: [{id: 0, date: "", todo: 5, done: 1}],
   add: function (params) {
-
+    this.items.push(params);
   },
   updates: function (params) {
 
@@ -43,10 +43,18 @@ $("#cmd-dial-close").click(function () {
 });
 
 $("#cmd-dial-add").click(function () {
-  Command.add({
-    date: null,
-    quantity: null
+  var id = Command.items[Command.items.length-1].id + 1;
+  var todo = $("#form-quantity").val();
+  if (todo) {
+    Command.add({
+      id: id,
+      date: null,
+      todo: $("#form-quantity").val(),
+      done: null
   });
+} else {
+  console.log('We need at least one');
+}
   $("#cmd-dial")[0].close();
 });
 
@@ -100,3 +108,11 @@ $("#cmd-datetime-validate").click(function () {
 //     socket.emit('update', {station: 0, changes: {todo: 25, done: 6}});
 //   },10000);
 // });
+
+// Fonctions
+function viewCompile(name, data) {
+  $.get('templates/'+name+'.html', function (file) {
+    console.log( Handlebars.compile(file)(data));
+    return Handlebars.compile(file)(data);
+  });
+}

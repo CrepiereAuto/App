@@ -1,0 +1,33 @@
+<!-- Wide card with share menu button -->
+<div class="demo-card-wide mdl-card mdl-shadow--2dp" id="{{id}}">
+  <div class="mdl-card__background"></div>
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">{{name}}</h2>
+  </div>
+  <!-- <div class="mdl-card__supporting-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Mauris sagittis pellentesque lacus eleifend lacinia...
+  </div> -->
+  <!-- Simple MDL Progress Bar -->
+  <div class="mdl-progress mdl-js-progress"></div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      Modify
+    </a>
+  </div>
+  <div class="mdl-card__menu">
+    <h3 class="progress-title">{{done}}/{{todo}}</h3>
+  </div>
+  <dialog class="mdl-dialog">
+    <h4 class="mdl-dialog__title">Allow data collection?</h4>
+    <div class="mdl-dialog__content">
+      <p>
+        Allowing us to collect data will let us get you the information you want faster.
+      </p>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button">Agree</button>
+      <button type="button" class="mdl-button close">Disagree</button>
+    </div>
+  </dialog>
+</div>
