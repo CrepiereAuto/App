@@ -4,6 +4,7 @@
   "description": "AppPI",
   "main": "index.js",
   "scripts": {
+    "start": "browser-sync start --config bs-config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Hougo13/AppPI/issues"
   },
-  "homepage": "https://github.com/Hougo13/AppPI#readme"
+  "homepage": "https://github.com/Hougo13/AppPI#readme",
+  "devDependencies": {
+    "browser-sync": "^2.12.5"
+  }
 }

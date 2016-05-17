@@ -93,44 +93,60 @@ $("#mchn-cancel").click(function () {
 });
 
 $("#mchn-add").click(function () {
+
   socket.emit('join', $("#mchn-code").val());
   $("#mchn-dial")[0].close();
 });
 
-//Socket manager
-var socket = io('http://localhost:3030');
-var token;
-// var token = 'Fklk7ThAPcSbgaba';
+// Socket manager
+// var socket = io('http://localhost:3030');
+// var server = {
+//   list: [],
+//   token: null,
+//   add: function (pin, name) {
+//     socket.emit('join', pin);
+//     self = this
+//     socket.on('join', function (data) {
+//       if (data) {
+//         this.list.push({name: name, room: data})
+//       }
+//       return data
+//     })
+//   }
+// }
+//
+// socket.on('connect', function(){
+//
+//   console.log('connected');
+//
+//   socket.on('disconnect', function(){
+//     console.log('disconnected');
+//   });
+//
+//   socket.emit('start', token);
+//
+//   socket.on('token', function (data) {
+//     token = data
+//     console.log(token);
+//   })
+//
+//   socket.on('join', function (data) {
+//     console.log(data);
+//   })
+//
+//   // setTimeout(function () {
+//   //   socket.emit('join', '123')
+//   // },5000)
+//   //
+//   // setTimeout(function () {
+//   //   console.log('update');
+//   //   socket.emit('update', {station: 0, changes: {todo: 25, done: 6}});
+//   // },10000);
+// });
 
-socket.on('connect', function(){
-
-  console.log('connected');
-
-  socket.on('disconnect', function(){
-    console.log('disconnected');
-  });
-
-  socket.emit('start', token);
-
-  socket.on('token', function (data) {
-    token = data
-    console.log(token);
-  })
-
-  socket.on('join', function (data) {
-    console.log(data);
-  })
-
-  // setTimeout(function () {
-  //   socket.emit('join', '123')
-  // },5000)
-  //
-  // setTimeout(function () {
-  //   console.log('update');
-  //   socket.emit('update', {station: 0, changes: {todo: 25, done: 6}});
-  // },10000);
-});
-
+// $.post("http://localhost:3000/123", obj,function( data ) {
+//   console.log(data);
+// });
 // Fonctions
 function viewCompile(name, data, callback) {
   $.get('templates/'+name+'.html', function (file) {
