@@ -49,9 +49,13 @@ $("#cmd-dial-add").click(function () {
     Command.add({
       id: id,
       date: null,
-      todo: $("#form-quantity").val(),
+      todo: todo,
       done: null
-  });
+    });
+    viewCompile('command', {id: "card-"+id, name: 'Machine 1', todo: todo, done: 0}, function (html) {
+      $("#home").append(html);
+      componentHandler.upgradeElement($("#card-"+id+" > .mdl-progress")[0]);
+    });
 } else {
   console.log('We need at least one');
 }
@@ -78,12 +82,43 @@ $("#cmd-datetime-validate").click(function () {
   $("#cmd-datetime")[0].close();
 });
 
+// View machines
+
+$("#mchn-btn").click(function () {
+  $("#mchn-dial")[0].showModal();
+});
+
+$("#mchn-cancel").click(function () {
+  $("#mchn-dial")[0].close();
+});
+
+$("#mchn-add").click(function () {
+
+  socket.emit('join', $("#mchn-code").val());
+  $("#mchn-dial")[0].close();
+});
+
 //Socket manager
 // var socket = io('http://localhost:3030');
-// var token = 'Fklk7ThAPcSbgaba';
+// var server = {
+//   list: [],
+//   token: null,
+//   add: function (pin, name) {
+//     socket.emit('join', pin);
+//     self = this
+//     socket.on('join', function (data) {
+//       if (data) {
+//         this.list.push({name: name, room: data})
+//       }
+//       return data
+//     })
+//   }
+// }
 //
 // socket.on('connect', function(){
+//
 //   console.log('connected');
+//
 //   socket.on('disconnect', function(){
 //     console.log('disconnected');
 //   });
@@ -99,20 +134,21 @@ $("#cmd-datetime-validate").click(function () {
 //     console.log(data);
 //   })
 //
-//   setTimeout(function () {
-//     socket.emit('join', '123')
-//   },5000)
-//
-//   setTimeout(function () {
-//     console.log('update');
-//     socket.emit('update', {station: 0, changes: {todo: 25, done: 6}});
-//   },10000);
+//   // setTimeout(function () {
+//   //   socket.emit('join', '123')
+//   // },5000)
+//   //
+//   // setTimeout(function () {
+//   //   console.log('update');
+//   //   socket.emit('update', {station: 0, changes: {todo: 25, done: 6}});
+//   // },10000);
 // });
 
+console.log('ok');
+
 // Fonctions
-function viewCompile(name, data) {
+function viewCompile(name, data, callback) {
   $.get('templates/'+name+'.html', function (file) {
-    console.log( Handlebars.compile(file)(data));
-    return Handlebars.compile(file)(data);
+    callback(Handlebars.compile(file)(data));
   });
 }

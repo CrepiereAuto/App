@@ -18,6 +18,6 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.2.1",
     "cordova-plugin-statusbar": "2.1.2"
-};
+}
 // BOTTOM OF METADATA
 });

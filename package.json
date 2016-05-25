@@ -4,7 +4,8 @@
   "description": "AppPI",
   "main": "index.js",
   "scripts": {
-    "start": "browser-sync start --config bs-config.js",
+    "start": "npm run build && browser-sync start --config bs-config.js",
+    "build": "browserify -d src/index.js -t babelify --outfile www/js/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,11 @@
   },
   "homepage": "https://github.com/Hougo13/AppPI#readme",
   "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babelify": "^7.3.0",
     "browser-sync": "^2.12.5"
+  },
+  "dependencies": {
+    "socket.io-iot": "git+https://github.com/Hougo13/socket.io-iot.git"
   }
 }

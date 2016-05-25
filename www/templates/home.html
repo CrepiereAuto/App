@@ -1,0 +1,123 @@
+{{#each commands}}
+<!-- Wide card with share menu button -->
+<div class="demo-card-wide mdl-card mdl-shadow--2dp" id="{{id}}">
+  <div class="mdl-card__background"></div>
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">{{name}}</h2>
+  </div>
+  <!-- <div class="mdl-card__supporting-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Mauris sagittis pellentesque lacus eleifend lacinia...
+  </div> -->
+  <!-- Simple MDL Progress Bar -->
+  <div class="mdl-progress mdl-js-progress" id=""></div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      Modify
+    </a>
+  </div>
+  <div class="mdl-card__menu">
+    <h3 class="progress-title">{{done}}/{{todo}}</h3>
+  </div>
+  <dialog class="mdl-dialog">
+    <h4 class="mdl-dialog__title">Allow data collection?</h4>
+    <div class="mdl-dialog__content">
+      <p>
+        Allowing us to collect data will let us get you the information you want faster.
+      </p>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button">Agree</button>
+      <button type="button" class="mdl-button close">Disagree</button>
+    </div>
+  </dialog>
+</div>
+{{/each}}
+
+<div class="cmd-machines">
+  <div class="cmd-machine">
+    <label class="cmd-machine-label">Coucou</label>
+    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored cmd-machine-btn">
+      <i class="material-icons">add</i>
+    </button>
+  </div>
+  <div class="cmd-machine">
+    <label class="cmd-machine-label">Coucou2</label>
+    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored cmd-machine-btn">
+      <i class="material-icons">add</i>
+    </button>
+  </div>
+</div>
+<button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored add-btn" id="cmd-btn">
+  <i class="material-icons">add</i>
+</button>
+<dialog class="mdl-dialog" id="cmd-dial">
+  <h4 class="mdl-dialog__title">New command</h4>
+  <div class="mdl-dialog__content">
+    <ul class="mdl-list">
+      <li class="mdl-list__item">
+        <span class="mdl-list__item-primary-content">
+          Datetime
+        </span>
+        <span class="mdl-list__item-secondary-action">
+          <button class="mdl-button mdl-js-button mdl-button--primary" id="datetime-btn">
+            <span id="datetime-txt">Now</span>
+          </button>
+        </span>
+      </li>
+      <li class="mdl-list__item">
+        <span class="mdl-list__item-primary-content">
+          Quantity
+        </span>
+        <span class="mdl-list__item-secondary-action dial-input">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="number" id="form-quantity">
+            <label class="mdl-textfield__label" for="form-quantity">Number...</label>
+          </div>
+        </span>
+      </li>
+      <!-- <li class="mdl-list__item">
+        <span class="mdl-list__item-primary-content">
+          Persons
+        </span>
+        <span class="mdl-list__item-secondary-action dial-input">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="number" id="form-persons">
+            <label class="mdl-textfield__label" for="form-persons">Number...</label>
+          </div>
+        </span>
+      </li> -->
+    </ul>
+  </div>
+  <div class="mdl-dialog__actions">
+    <button type="button" class="mdl-button mdl-js-button mdl-button--primary" id="cmd-dial-add">Add</button>
+    <button type="button" class="mdl-button close" id="cmd-dial-close">Cancel</button>
+  </div>
+  <dialog class="mdl-dialog" id="cmd-datetime">
+    <h4 class="mdl-dialog__title">Date</h4>
+    <div class="mdl-dialog__content">
+      <ul class="mdl-list">
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            Date
+          </span>
+          <span class="mdl-list__item-secondary-action">
+            <input type="date" id="cmd-datetime-date">
+          </span>
+        </li>
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            Time
+          </span>
+          <span class="mdl-list__item-secondary-action">
+            <input type="time" id="cmd-datetime-time">
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="button" class="mdl-button mdl-js-button mdl-button--primary" id="cmd-datetime-validate">Validate</button>
+      <button type="button" class="mdl-button close" id="cmd-datetime-close">Cancel</button>
+    </div>
+  </dialog>
+</dialog>
