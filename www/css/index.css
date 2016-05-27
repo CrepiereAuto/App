@@ -125,7 +125,7 @@
 
 
 
-.mdl-textfield.is-disabled.is-disabled .mdl-textfield__label, .mdl-textfield__label, fieldset[disabled] .mdl-textfield .mdl-textfield__label {
+/*.mdl-textfield.is-disabled.is-disabled .mdl-textfield__label, .mdl-textfield__label, fieldset[disabled] .mdl-textfield .mdl-textfield__label {
     color: black;
 }
 
@@ -141,7 +141,7 @@
 .mdl-button__ripple-container {
 
   left: 0px;
-}
+}*/
 
 #btn-recipes {
   top: 22vw;
@@ -160,6 +160,8 @@
   top: 1vh;
   left: 1vw;
   margin-bottom: 2vh;
+  float: left;
+  margin-right: 1vw;
 
 }
 .demo-card-square > .mdl-card__title {
