@@ -14,3 +14,32 @@
     {{/each}}
   </ul>
 </div> -->
+
+<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+  <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+  <span class="mdl-radio__label">Sucrée</span>
+</label>
+<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+  <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+  <span class="mdl-radio__label">Salée</span>
+</label>
+<!-- Numeric Textfield -->
+<form action="#">
+  <div class="mdl-textfield mdl-js-textfield"  style="    position: relative;
+      font-size: 16px;
+      display: inline-block;
+      box-sizing: border-box;
+      width: 3vw;
+      max-width: 100%;
+      margin: 0;
+      padding: 20px 0;
+      top: 6vh;
+      left: 50vw;">
+    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+    <label class="mdl-textfield__label" id="textfield-quantity" for="sample2">Quantité :</label>
+    <span class="mdl-textfield__error">Input is not a number!</span>
+  </div>
+</form>
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="btn-recipes">
+  Recette
+</button>
