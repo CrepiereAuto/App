@@ -32,7 +32,165 @@
             </nav>
           </div>
           <main class="mdl-layout__content">
+<<<<<<< HEAD
             <div class="page-content"></div>
+=======
+            <div class="page-content">
+              <div class="view" id="home">
+                <div class="cmd-machines">
+                  <div class="cmd-machine">
+                    <label class="cmd-machine-label">Coucou</label>
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored cmd-machine-btn">
+                      <i class="material-icons">add</i>
+                    </button>
+                  </div>
+                  <div class="cmd-machine">
+                    <label class="cmd-machine-label">Coucou2</label>
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored cmd-machine-btn">
+                      <i class="material-icons">add</i>
+                    </button>
+                  </div>
+                </div>
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored add-btn" id="cmd-btn">
+                  <i class="material-icons">add</i>
+                </button>
+                <dialog class="mdl-dialog" id="cmd-dial">
+                  <h4 class="mdl-dialog__title">New command</h4>
+                  <div class="mdl-dialog__content">
+                    <ul class="mdl-list">
+                      <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                          Datetime
+                        </span>
+                        <span class="mdl-list__item-secondary-action">
+                          <button class="mdl-button mdl-js-button mdl-button--primary" id="datetime-btn">
+                            <span id="datetime-txt">Now</span>
+                          </button>
+                        </span>
+                      </li>
+                      <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                          Quantity
+                        </span>
+                        <span class="mdl-list__item-secondary-action dial-input">
+                          <div class="mdl-textfield mdl-js-textfield">
+                            <input class="mdl-textfield__input" type="number" id="form-quantity">
+                            <label class="mdl-textfield__label" for="form-quantity">Number...</label>
+                          </div>
+                        </span>
+                      </li>
+                      <!-- <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                          Persons
+                        </span>
+                        <span class="mdl-list__item-secondary-action dial-input">
+                          <div class="mdl-textfield mdl-js-textfield">
+                            <input class="mdl-textfield__input" type="number" id="form-persons">
+                            <label class="mdl-textfield__label" for="form-persons">Number...</label>
+                          </div>
+                        </span>
+                      </li> -->
+                    </ul>
+                  </div>
+                  <div class="mdl-dialog__actions">
+                    <button type="button" class="mdl-button mdl-js-button mdl-button--primary" id="cmd-dial-add">Add</button>
+                    <button type="button" class="mdl-button close" id="cmd-dial-close">Cancel</button>
+                  </div>
+                  <dialog class="mdl-dialog" id="cmd-datetime">
+                    <h4 class="mdl-dialog__title">Date</h4>
+                    <div class="mdl-dialog__content">
+                      <ul class="mdl-list">
+                        <li class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            Date
+                          </span>
+                          <span class="mdl-list__item-secondary-action">
+                            <input type="date" id="cmd-datetime-date">
+                          </span>
+                        </li>
+                        <li class="mdl-list__item">
+                          <span class="mdl-list__item-primary-content">
+                            Time
+                          </span>
+                          <span class="mdl-list__item-secondary-action">
+                            <input type="time" id="cmd-datetime-time">
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mdl-dialog__actions">
+                      <button type="button" class="mdl-button mdl-js-button mdl-button--primary" id="cmd-datetime-validate">Validate</button>
+                      <button type="button" class="mdl-button close" id="cmd-datetime-close">Cancel</button>
+                    </div>
+                  </dialog>
+                </dialog>
+              </div>
+              <div class="view" id="recipes">
+
+              </div>
+              <div class="view" id="machines">
+                <dialog class="mdl-dialog" id="mchn-dial">
+                  <h4 class="mdl-dialog__title">Add machine</h4>
+                  <div class="mdl-dialog__content">
+                    <ul class="mdl-list">
+                      <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content mdl-list__margin">
+                          Name
+                        </span>
+                        <span class="mdl-list__item-secondary-action">
+                          <div class="mdl-textfield mdl-js-textfield">
+                            <input class="mdl-textfield__input" type="text" id="mchn-name">
+                            <label class="mdl-textfield__label" for="sample1">Name</label>
+                          </div>
+                        </span>
+                      </li>
+                      <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content mdl-list__margin">
+                          Code
+                        </span>
+                        <span class="mdl-list__item-secondary-action">
+                          <div class="mdl-textfield mdl-js-textfield">
+                            <input class="mdl-textfield__input" type="text" id="mchn-code">
+                            <label class="mdl-textfield__label" for="sample1">Code</label>
+                          </div>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mdl-dialog__actions">
+                    <button type="button" class="mdl-button" id="mchn-add">Add</button>
+                    <button type="button" class="mdl-button close" id="mchn-cancel">Cancel</button>
+                  </div>
+                </dialog>
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored add-btn" id="mchn-btn">
+                  <i class="material-icons">add</i>
+                </button>
+
+              </div>
+              <div class="view" id="configure">
+                <ul class="mdl-list">
+                  <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                      Sub-menu
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <i class="material-icons">chevron_right</i>
+                    </span>
+                  </li>
+                  <li class="mdl-list__item">
+                  <span class="mdl-list__item-primary-content">
+                    Notification
+                  </span>
+                    <span class="mdl-list__item-secondary-action">
+                      <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="list-switch-1">
+                        <input type="checkbox" id="list-switch-1" class="mdl-switch__input" checked />
+                      </label>
+                  </span>
+                </li>
+                </ul>
+              </div>
+            </div>
+>>>>>>> test
           </main>
         </div>
         <!-- <script type="text/javascript" src="cordova.js"></script> -->

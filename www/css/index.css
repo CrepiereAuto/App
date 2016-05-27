@@ -100,3 +100,70 @@
 .mdl-list__margin {
   margin-right: 14%;
 }
+
+
+.mdl-radio.is-upgraded {
+    padding-left: 24px;
+    left: 27%;
+    top: 4vh;
+    font-size: 3vh;
+    padding-right: 4vw;
+}
+
+#textfield-quantity {
+    bottom: 0;
+    font-size: 3vh;
+    left: -23vw;
+    right: 0;
+    pointer-events: none;
+    position: absolute;
+    display: block;
+    top: 5vh;
+    width: 17vw;
+    text-align: left;
+}
+
+
+
+.mdl-textfield.is-disabled.is-disabled .mdl-textfield__label, .mdl-textfield__label, fieldset[disabled] .mdl-textfield .mdl-textfield__label {
+    color: black;
+}
+
+
+
+.mdl-textfield__input {
+  font-size: 3vh;
+  text-align: center;
+  width: 6vw;
+
+}
+
+.mdl-button__ripple-container {
+
+  left: 0px;
+}
+
+#btn-recipes {
+  top: 22vw;
+  left: 33%;
+
+}
+#button-machines {
+  font-size: 12px;
+  height: 30px;
+
+}
+
+.demo-card-square.mdl-card {
+  width: 47%;
+  height: 50%;
+  top: 1vh;
+  left: 1vw;
+  margin-bottom: 2vh;
+
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url('../img/machines.jpg') center 15% no-repeat #46B6AC;
+}
