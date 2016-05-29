@@ -1,6 +1,6 @@
 {{#each commands}}
 <!-- Wide card with share menu button -->
-<div class="demo-card-wide mdl-card mdl-shadow--2dp" id="{{id}}">
+<div class="demo-card-wide mdl-card mdl-shadow--2dp" id="{{room}}">
   <div class="mdl-card__background"></div>
   <div class="mdl-card__title">
     <h2 class="mdl-card__title-text">{{name}}</h2>
@@ -12,46 +12,32 @@
   <!-- Simple MDL Progress Bar -->
   <div class="mdl-progress mdl-js-progress" id=""></div>
   <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect modify-btn">
       Modify
     </a>
   </div>
   <div class="mdl-card__menu">
     <h3 class="progress-title">{{done}}/{{todo}}</h3>
   </div>
-  <dialog class="mdl-dialog">
-    <h4 class="mdl-dialog__title">Allow data collection?</h4>
-    <div class="mdl-dialog__content">
-      <p>
-        Allowing us to collect data will let us get you the information you want faster.
-      </p>
-    </div>
-    <div class="mdl-dialog__actions">
-      <button type="button" class="mdl-button">Agree</button>
-      <button type="button" class="mdl-button close">Disagree</button>
-    </div>
-  </dialog>
 </div>
 {{/each}}
 
 <div class="cmd-machines">
+  {{#each machines}}
   <div class="cmd-machine">
-    <label class="cmd-machine-label">Coucou</label>
-    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored cmd-machine-btn">
+    <label class="cmd-machine-label">{{name}}</label>
+    <button id="mc#{{room}}" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored cmd-machine-btn">
       <i class="material-icons">add</i>
     </button>
   </div>
-  <div class="cmd-machine">
-    <label class="cmd-machine-label">Coucou2</label>
-    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored cmd-machine-btn">
-      <i class="material-icons">add</i>
-    </button>
+  {{/each}}
   </div>
 </div>
 <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored add-btn" id="cmd-btn">
   <i class="material-icons">add</i>
 </button>
-<dialog class="mdl-dialog" id="cmd-dial">
+
+<!-- <dialog class="mdl-dialog" id="cmd-dial">
   <h4 class="mdl-dialog__title">New command</h4>
   <div class="mdl-dialog__content">
     <ul class="mdl-list">
@@ -76,7 +62,8 @@
           </div>
         </span>
       </li>
-      <!-- <li class="mdl-list__item">
+      <input type="hidden" id="form-room">
+      <li class="mdl-list__item">
         <span class="mdl-list__item-primary-content">
           Persons
         </span>
@@ -86,7 +73,7 @@
             <label class="mdl-textfield__label" for="form-persons">Number...</label>
           </div>
         </span>
-      </li> -->
+      </li>
     </ul>
   </div>
   <div class="mdl-dialog__actions">
@@ -120,4 +107,41 @@
       <button type="button" class="mdl-button close" id="cmd-datetime-close">Cancel</button>
     </div>
   </dialog>
+</dialog> -->
+
+<dialog class="mdl-dialog" id="add-dial">
+  <h4 class="mdl-dialog__title">New command</h4>
+  <form id="add-form">
+    <input type="hidden" id="add-room" value="">
+    <div class="mdl-dialog__content">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="add-quantity">
+        <label class="mdl-textfield__label" for="add-quantity">Quantity...</label>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+      </div>
+    </div>
+    <div class="mdl-dialog__actions">
+      <input class="mdl-button" type="submit" value="Add">
+      <button type="button" class="mdl-button close" id="add-cancel">Cancel</button>
+    </div>
+  </form>
+</dialog>
+
+
+<dialog class="mdl-dialog" id="modify-dial">
+  <h4 class="mdl-dialog__title">Edit command</h4>
+  <form id="modify-form">
+    <input type="hidden" id="modify-room" value="">
+    <div class="mdl-dialog__content">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="modify-quantity">
+        <label class="mdl-textfield__label" for="modify-num">Number...</label>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+      </div>
+    </div>
+    <div class="mdl-dialog__actions">
+      <input class="mdl-button" type="submit" value="Confirm">
+      <button type="button" class="mdl-button close" id="modify-cancel">Cancel</button>
+    </div>
+  </form>
 </dialog>

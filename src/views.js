@@ -19,6 +19,9 @@ export default class {
       })
     })
   }
+  get(viewId) {
+    return this.vdata[viewId]
+  }
   edit(viewId, data) {
     this.vdata[viewId] = data;
     this.compile(viewId).then((value) => {
@@ -32,6 +35,7 @@ export default class {
     $('[class*=mdl]').each((index, item) => {
       componentHandler.upgradeElement(item)
     })
+    this.now = viewId
     if (callback) {
       callback()
     }

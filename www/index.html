@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' *;script-src 'self' * 'unsafe-eval' 'unsafe-inline';"> -->
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -26,7 +27,7 @@
             <span class="mdl-layout-title">AppPI</span>
             <nav class="mdl-navigation">
               <a class="mdl-navigation__link" href="#">Home</a>
-              <a class="mdl-navigation__link" href="#">Recipes</a>
+              <!-- <a class="mdl-navigation__link" href="#">Recipes</a> -->
               <a class="mdl-navigation__link" href="#">Machines</a>
               <a class="mdl-navigation__link" href="#">Configure</a>
             </nav>
@@ -35,7 +36,7 @@
             <div class="page-content"></div>
           </main>
         </div>
-        <!-- <script type="text/javascript" src="cordova.js"></script> -->
+        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/vendor/material.min.js"></script>
         <script type="text/javascript" src="js/vendor/jquery-2.2.1.min.js"></script>
         <!-- <script type="text/javascript" src="js/vendor/jquery-ui.min.js"></script> -->

@@ -1,4 +1,4 @@
-<dialog class="mdl-dialog" id="mchn-dial">
+<!-- <dialog class="mdl-dialog" id="mchn-dial">
   <h4 class="mdl-dialog__title">Add machine</h4>
   <div class="mdl-dialog__content">
     <ul class="mdl-list">
@@ -30,49 +30,52 @@
     <button type="button" class="mdl-button" id="mchn-add">Add</button>
     <button type="button" class="mdl-button close" id="mchn-cancel">Cancel</button>
   </div>
+</dialog> -->
+
+<dialog class="mdl-dialog" id="machine-dial">
+  <h4 class="mdl-dialog__title">Add machine</h4>
+  <form id="machine-form">
+    <div class="mdl-dialog__content">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="machine-name">
+        <label class="mdl-textfield__label" for="machine-name">Name...</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="machine-code">
+        <label class="mdl-textfield__label" for="machine-code">Code...</label>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+      </div>
+    </div>
+    <div class="mdl-dialog__actions">
+      <input class="mdl-button" type="submit" value="Add">
+      <button type="button" class="mdl-button close" id="machine-cancel">Cancel</button>
+    </div>
+  </form>
 </dialog>
+
 <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored add-btn" id="mchn-btn">
   <i class="material-icons">add</i>
 </button>
 
+{{#each machines}}
 <div class="demo-card-square mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">Machine 1</h2>
+    <h2 class="mdl-card__title-text">{{name}}</h2>
   </div>
   <!-- <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     Aenan convallis.
   </div> -->
   <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="button-machines">
+    <!-- <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="button-machines">
       Connecter
     </a>
     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
       Déconnecter
-    </a>
+    </a> -->
     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
       Supprimer
     </a>
   </div>
 </div>
-
-<div class="demo-card-square mdl-card mdl-shadow--2dp">
-  <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">Machine 1</h2>
-  </div>
-  <!-- <div class="mdl-card__supporting-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
-  </div> -->
-  <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="button-machines">
-      Connecter
-    </a>
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      Déconnecter
-    </a>
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      Supprimer
-    </a>
-  </div>
-</div>
+{{/each}}
