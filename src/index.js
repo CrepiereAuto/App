@@ -154,18 +154,26 @@ function modifyReset() {
 
 // Rasberry events
 rsb.on('command', (c) => {
+  console.log(c);
+  c = c.data
   let y = indexCommand(c)
   if (y > -1) {
+    console.log(c);
+    console.log('comd exist');
     c.name = commands[y].name
     commands[y] = c
   } else {
     let i = indexMachine(c)
     if (i > -1) {
+      console.log(c);
+      console.log('mchn exist');
       c.name = machines[i].name
     } else {
       c.name = 'unknown'
     }
+    console.log(c);
     if (c.todo > 0 && c.todo > c.done) {
+      console.log('ok');
       commands.push(c)
     }
   }
@@ -177,6 +185,7 @@ rsb.on('command', (c) => {
         views.edit('home', {commands, machines})
       }
     }, 2000)
+    console.log(commands, machines, views);
   }
   views.edit('home', {commands, machines})
 })
