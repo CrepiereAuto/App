@@ -2,8 +2,8 @@ import iot from 'socket.io-iot'
 import Views from './views'
 
 // Collections
-let commands = [{room: 'test', progress: 60, todo: 4, done:2, name: 'Coucou'}]
-let machines = [{name: "Test", room: 'nop'}]
+let commands = [{room: 'ex', progress: 60, todo: 4, done:2, name: 'Exemple'}]
+let machines = [{name: "Exemple", room: 'ex'}]
 
 // Initialisation of socket
 var rsb = new iot('http://82.240.88.61:3030', "client")
